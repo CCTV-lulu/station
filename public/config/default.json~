@@ -1,0 +1,1 @@
+{"message_queue":{"name":"test_tj","username":"guest","password":"123456","server":"139.129.219.125","virtual_hose":"gnss","server_port":"15672","serial_port":"COM1","baudRate":115200,"log_server_port":"3000"},"station":{"id":"shanghai-dev","port":"8899"}}

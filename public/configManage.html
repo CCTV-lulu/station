@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- jia-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- jia-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="lib/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/angular-material.min.css">
+
+    <script src="lib/angular-1.5.8/angular.min.js"></script>
+    <script src="lib/angular-1.5.8/angular-route.js"></script>
+    <script src="lib/av-min-1.2.1.js"></script>
+
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="lib/angular-aria.min.js"></script>
+    <script src="lib/angular-messages.min.js"></script>
+    <script src="lib/angular-material.min.js"></script>
+
+    <script src="routes.js"></script>
+    <script src="homeController.js"></script>
+    <script src="server.js"></script>
+
+</head>
+<body ng-app='routingDemoApp' ng-controller="myCtrl">
+<md-toolbar class="md-hue-1">
+    <div class="md-toolbar-tools">
+        <span flex></span>
+    </div>
+</md-toolbar>
+<div class="home_page" style="float: left;width: 100%;">
+    <div flex="30" flex-offset="5" layout="column" style="z-index: 9999;">
+
+        <md-content class="md-no-momentum">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">配置管理</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="column" layout-align="space-between">
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Socket server</label>
+                        <input ng-model="socket.server" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Socket server Port</label>
+                        <input ng-model="socket.server_port" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Virtual Hose</label>
+                        <input ng-model="socket.virtual_hose" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Serial Port</label>
+                        <input ng-model="socket.serial_port" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>baudRate</label>
+                        <input ng-model="socket.baudRate" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Log Server Port</label>
+                        <input ng-model="socket.log_server_port" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Station Id</label>
+                        <input ng-model="station.id" type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-icon-float md-block">
+                        <label>Sta Id</label>
+                        <input ng-model="station.sta_id" type="text">
+                    </md-input-container>
+
+                    <md-card-actions layout="column">
+                        <md-button class="md-raised md-primary" ng-click="save_config()">保存设置</md-button>
+                    </md-card-actions>
+                    <md-card-actions layout="row" layout-align="space-around">
+                        <md-button flex="50" class="md-raised md-primary" ng-click="start_station()"
+                                   ng-disabled="startStation">启动
+                        </md-button>
+                        <md-button flex="50" class="md-raised md-primary"
+                                   ng-click="stop_station()"ng-disabled="stopStation">终止</md-button>
+                    </md-card-actions>
+                </md-card-content>
+            </md-card>
+        </md-content>
+    </div>
+</div>
+
+</body>
+</html>

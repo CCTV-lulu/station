@@ -1,0 +1,12 @@
+# Webstorm
+node_modules
+node_modules/
+.idea
+
+*.logs
+uploads
+
+logs/*
+station/node_modules/*
+
+
