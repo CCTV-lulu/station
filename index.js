@@ -107,9 +107,9 @@ function startStation() {
     // var logger = require("./log4js")(Config['station'].id);
     emitterOn(queueConfStation);
     // setupSerialPort(queueConf, queueConfStation);
-    setInterval(function () {
-        sendLogFiles(queueConf);
-    }, 1000 * 2);
+    // setInterval(function () {
+    //     sendLogFiles(queueConf);
+    // }, 1000 * 2);
     sendLogFiles(queueConf);
 }
 
@@ -179,7 +179,7 @@ function sendLogFiles(queueConf) {
         console.log(path);
         status = true;
         request.post({
-            url: 'http://localhost:' + queueConf.log_server_port + '/logs',
+            url: 'http://101.37.150.119:' + queueConf.log_server_port + '/logs',
             formData: formData
         }, function optionalCallback(err, httpResponse, body) {
             status = false;
